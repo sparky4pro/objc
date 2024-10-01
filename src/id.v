@@ -32,7 +32,7 @@ pub fn (id Id) set_ivar[T](name string, value T) {
 		unsafe {
 			mut ptr := &u8(voidptr(id))
 			ptr = ptr + ivar.offset()
-			*ptr =  &u8(voidptr(value)) // this works when objc is compiled as a file module
+			*ptr = &u8(voidptr(value)) // this works when objc is compiled as a file module
 		}
 	}
 }
